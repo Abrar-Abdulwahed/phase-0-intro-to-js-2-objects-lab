@@ -1,14 +1,20 @@
 // Initialized the employee Object using literal syntax
 const employee = {
     name: "Abrar",
-    streetAddress: "Almashbah",
+    streetAddress: "Almasbah",
 }
 
 
 function updateEmployeeWithKeyAndValue(employee, key, value){
-    const newEmployee = {...employee}
-    newEmployee[key] = value;
-    return newEmployee;
+    // const newEmployee = {...employee} === const newEmployee = Object.assign({}, employee);
+    // newEmployee[key] = value;
+    // return newEmployee;
+
+    //refactor the function
+    return {
+        ...employee,
+        [key]: value,
+    };
 }
 
 function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value){
